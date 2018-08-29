@@ -1,7 +1,7 @@
 {
   "name": "vue-bounce-checkbox",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build:lib": "vue-cli-service build --target lib --name Checkbox ./src/components/Checkbox.vue",
@@ -10,11 +10,11 @@
     "test:debug": "vue-cli-service test:unit --watch --inspect-brk",
     "test:coverage": "nyc vue-cli-service test:unit",
     "serve:docs": "vue-styleguidist server",
-    "buid:docs": "vue-styleguidist build"
+    "build:docs": "vue-styleguidist build",
+    "deploy": "node deploy.js"
   },
   "dependencies": {
-    "vue": "^2.5.17",
-    "vue-styleguidist": "^1.8.3"
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",
@@ -24,10 +24,12 @@
     "@vue/test-utils": "^1.0.0-beta.20",
     "babel-plugin-istanbul": "^5.0.1",
     "chai": "^4.1.2",
+    "ghpages": "^0.0.10",
     "node-sass": "^4.9.0",
     "nyc": "^13.0.1",
     "sass-loader": "^7.0.1",
     "sinon": "^6.1.5",
+    "vue-styleguidist": "^1.8.3",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
@@ -54,6 +56,15 @@
     "last 2 versions",
     "not ie <= 8"
   ],
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "*.MD"
+  ],
+  "main": "./dist/checkbox.umd.js",
   "nyc": {
     "check-coverage": true,
     "per-file": true,
@@ -79,5 +90,6 @@
     "all": true,
     "sourceMap": false,
     "instrument": false
-  }
+  },
+  "license": "MIT"
 }
