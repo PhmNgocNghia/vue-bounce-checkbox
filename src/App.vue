@@ -1,17 +1,27 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <checkbox :checked="true" :onClicked="toggleCheckbox"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Checkbox from './components/Checkbox'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      isCheckBoxChecked: false
+    }
+  },
+  methods: {
+    toggleCheckbox () {
+      this.isCheckBoxChecked = !this.isCheckBoxChecked
+    }
+  },
   components: {
-    HelloWorld
+    Checkbox
   }
 }
 </script>

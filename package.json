@@ -4,12 +4,17 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --target lib --name Checkbox ./src/components/Checkbox.vue",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "test:debug": "vue-cli-service test:unit --watch --inspect-brk",
+    "test:coverage": "nyc vue-cli-service test:unit",
+    "serve:docs": "vue-styleguidist server",
+    "buid:docs": "vue-styleguidist build"
   },
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-styleguidist": "^1.8.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",
@@ -17,9 +22,12 @@
     "@vue/cli-plugin-unit-mocha": "^3.0.1",
     "@vue/cli-service": "^3.0.1",
     "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-plugin-istanbul": "^5.0.1",
     "chai": "^4.1.2",
     "node-sass": "^4.9.0",
+    "nyc": "^13.0.1",
     "sass-loader": "^7.0.1",
+    "sinon": "^6.1.5",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
@@ -45,5 +53,31 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 90,
+    "statements": 90,
+    "functions": 90,
+    "branches": 90,
+    "include": [
+      "src/**/*.{js,vue}"
+    ],
+    "exclude": [
+      "src/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "extension": [
+      ".js"
+    ],
+    "cache": true,
+    "all": true,
+    "sourceMap": false,
+    "instrument": false
+  }
 }
