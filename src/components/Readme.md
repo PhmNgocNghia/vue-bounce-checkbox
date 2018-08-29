@@ -1,17 +1,23 @@
 Without text:
 
 ```jsx
-<Checkbox></Checkbox>
+let globalChecked = false
+<Checkbox v-model="globalChecked" ></Checkbox>
 ```
 
 With text:
 
 ```jsx
-<Checkbox text="With text"></Checkbox>
+let globalChecked = false
+<Checkbox text="pink" v-model="globalChecked" ></Checkbox>
 ```
 
-Different theme:
+
+With text and pink theme:
 
 ```jsx
-<Checkbox modifierClass="pink" text="pink theme"></Checkbox>
+let globalChecked = false
+<Checkbox modifierClass="pink" text="pink" v-model="globalChecked" ></Checkbox>
 ```
+
+

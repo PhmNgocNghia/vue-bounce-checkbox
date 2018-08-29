@@ -1,10 +1,10 @@
 <template>
   <div :class="computedContainerClass">
     <div class="bouncechk__wrapper">
-      <input @click="onClicked" :checked="checked" type='checkbox' class="bouncechk__input" :id="computedId" />
+      <input ref="input" @input="toggleCheckbox" :checked="value" type='checkbox' class="bouncechk__input" :id="computedId" />
       <label :class="computedLabelClass" :for="computedId" />
     </div>
-    <span :class="computedTextClass">{{text}}</span>
+    <a href="#" @click.prevent="toggleCheckbox" :class="computedTextClass">{{text}}</a>
   </div>
 </template>
 
@@ -46,16 +46,10 @@ export default {
     text: {
       type: String
     },
-    
-    onClicked: {
-      type: Function,
-      required: true
-    },
-    checked: {
+    value: {
       type: Boolean,
       required: true
     }
-
   },
   computed: {
     computedContainerClass () {
@@ -73,6 +67,11 @@ export default {
     computedId () {
       return this.id || makeid()
     }
+  },
+  methods: {
+    toggleCheckbox () {
+      this.$emit('input', !this.value)
+    },
   }
 }
 </script>

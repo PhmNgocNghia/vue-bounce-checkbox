@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <checkbox :checked="true" :onClicked="toggleCheckbox"/>
+    <checkbox v-model="isCheckBoxChecked" text='count'/> 
   </div>
 </template>
 
@@ -13,11 +13,6 @@ export default {
   data () {
     return {
       isCheckBoxChecked: false
-    }
-  },
-  methods: {
-    toggleCheckbox () {
-      this.isCheckBoxChecked = !this.isCheckBoxChecked
     }
   },
   components: {
