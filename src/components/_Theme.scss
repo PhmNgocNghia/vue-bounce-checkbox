@@ -6,6 +6,7 @@ $themes: (
   ('orange', #E64A19),
   ('gray', #455A64),
   ('red', #d32f2f),
+  ('white', #ffffff)
 );
 
 @each $theme in $themes {
