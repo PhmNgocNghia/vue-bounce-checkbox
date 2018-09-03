@@ -64,6 +64,10 @@
     "*.js",
     "*.MD"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhmNgocNghia/vue-bounce-checkbox"
+  },
   "main": "./dist/checkbox.umd.js",
   "nyc": {
     "check-coverage": true,
@@ -90,6 +94,11 @@
     "all": true,
     "sourceMap": false,
     "instrument": false
+  },
+  "author": {
+    "name": "Pham Ngoc Nghia",
+    "email": "phmngocnghia@gmail.com",
+    "url": "https://phmngocnghia.github.io"
   },
   "license": "MIT"
 }
