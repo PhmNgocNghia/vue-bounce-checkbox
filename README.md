@@ -1,5 +1,6 @@
 # vue-bounce-checkbox
 [Document and demo](https://phmngocnghia.github.io/vue-bounce-checkbox)
+[Npm](https://github.com/PhmNgocNghia/vue-bounce-checkbox)
 [React-bounce-checkbox](https://github.com/PhmNgocNghia/react-bounce-checkbox)
 
 # Install
@@ -8,16 +9,32 @@ yarn install vue-bounce-checkbox
 ```
 
 # Usage ES6
-```
-import checkbox from 'vue-bounce-checkbox/dist/checkbox.umd.js'
+```js
+import checkbox from 'vue-bounce-checkbox/dist/Checkbox.umd.js'
 import 'vue-bounce-checkbox/dist/checkbox.css'
 ```
 
-
 # Usage Non node environment
+```html
+<script src="https://unpkg.com/vue-bounce-checkbox@0.1.2/dist/Checkbox.umd.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/vue-bounce-checkbox@0.1.2/dist/Checkbox.css"/>
 ```
-<script src="https://unpkg.com/vue-bounce-checkbox/dist/checkbox.umd.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/vue-bounce-checkbox/dist/checkbox.css"></script>
+
+Then
+
+```html
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: Checkbox
+  }
+}).$mount('#app')
+</script>
+
 ```
 
 ## Project setup
